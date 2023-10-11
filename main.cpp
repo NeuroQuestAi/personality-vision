@@ -13,7 +13,6 @@
 
 namespace vision {
 namespace ops {
-
 namespace {
 
 template <typename T>
@@ -162,15 +161,13 @@ at::Tensor roi_align_forward_kernel(
 }
 
 } // namespace
-
-
 } // namespace ops
 } // namespace vision
 
 int main(){
   torch::manual_seed(0);
   
-  torch::jit::script::Module tensors = torch::jit::load("/home/edmcs/tensors.pth");
+  torch::jit::script::Module tensors = torch::jit::load("/home/edmc/tensors.pth");
   c10::IValue feats = tensors.attr("cr_features");
   torch::Tensor feat_ts = feats.toTensor();
   
